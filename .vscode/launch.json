@@ -15,6 +15,15 @@
       "skipFiles": [
         "<node_internals>/**"
       ]
+    },
+    {
+      "command": "npm run start:hybrid",
+      "name": "debug backend",
+      "request": "launch",
+      "type": "node-terminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
     }
   ]
 }

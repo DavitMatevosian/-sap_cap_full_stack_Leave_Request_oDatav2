@@ -17,11 +17,11 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/odata/v4/movie/",
+        "uri": "/odata/v2/movie/",
         "type": "OData",
         "settings": {
           "annotations": [],
-          "odataVersion": "4.0"
+          "odataVersion": "2.0"
         }
       }
     }
@@ -43,7 +43,7 @@
     }
   },
   "sap.ui5": {
-    "flexEnabled": true,
+    "flexEnabled": false,
     "dependencies": {
       "minUI5Version": "1.120.9",
       "libs": {
@@ -70,13 +70,7 @@
       },
       "": {
         "dataSource": "mainService",
-        "preload": true,
-        "settings": {
-          "synchronizationMode": "None",
-          "operationMode": "Server",
-          "autoExpandSelect": true,
-          "earlyRequests": true
-        }
+        "preload": true
       }
     },
     "resources": {
@@ -98,20 +92,66 @@
       },
       "routes": [
         {
-          "name": "RouteMaster",
-          "pattern": ":?query:",
+          "pattern": "",
+          "name": "",
           "target": [
-            "TargetMaster"
+            "master",
+            "RequestList"
+          ]
+        },
+        {
+          "pattern": "RequestList",
+          "name": "tracker",
+          "target": [
+            "master",
+            "RequestList"
+          ]
+        },
+        {
+          "pattern": "ControlLeaveRequest",
+          "name": "ControlLeaveRequest",
+          "target": [
+            "master",
+            "ControlLeaveRequest"
+          ]
+        },
+        {
+          "pattern": "EmployeeRequestList",
+          "name": "EmployeeRequestList",
+          "target": [
+            "master",
+            "EmployeeRequestList"
           ]
         }
       ],
       "targets": {
-        "TargetMaster": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "Master",
-          "viewName": "Master"
+        "master": {
+          "viewPath": "com.app.leaverequest.view",
+          "viewName": "Master",
+          "viewLevel": 1,
+          "controlAggregation": "masterPages",
+          "transition": "slide"
+        },
+        "RequestList": {
+          "viewPath": "com.app.leaverequest.view",
+          "viewName": "RequestList",
+          "viewLevel": 2,
+          "controlAggregation": "detailPages",
+          "transition": "slide"
+        },
+        "ControlLeaveRequest": {
+          "viewPath": "com.app.leaverequest.view",
+          "viewName": "ControlLeaveRequest",
+          "viewLevel": 2,
+          "controlAggregation": "detailPages",
+          "transition": "slide"
+        },
+        "EmployeeRequestList": {
+          "viewPath": "com.app.leaverequest.view",
+          "viewName": "EmployeeRequestList",
+          "viewLevel": 2,
+          "controlAggregation": "detailPages",
+          "transition": "slide"
         }
       }
     },

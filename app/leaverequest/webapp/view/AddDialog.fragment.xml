@@ -1,0 +1,44 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        title="Enter Details"
+        draggable="true"
+        resizable="true"
+        contentWidth="600px"
+        contentHeight="auto"
+        class="sapUiResponsiveContentPadding"
+    >
+        <content>
+            <Label text="Enter reason:"/>
+            <Input
+                id="reasonInput"
+            />
+            <Label text="Enter start date:"/>
+            <DatePicker
+                id="startDateInput"
+            />
+            <Label text="Enter end date:"/>
+            <DatePicker
+                id="endDateInput"
+            />
+            <Label text="Enter leave type:"/>
+            <Input
+                id="leaveTypeInput"
+            />
+        </content>
+        <beginButton>
+            <Button
+                text="Submit"
+                press="onSubmit"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                text="Cancel"
+                press="onCancel"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,7 +1,11 @@
 <mvc:View controllerName="com.app.leaverequest.controller.Master"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
+    <Page title="Menu">
+        <List>
+            <ObjectListItem title="Leave Requests List" press="handleRequestsListSelection" type="Active"/>
+            <ObjectListItem title="My Leave Requests" press="handleMyLeaveRequestsSelection" type="Active" visible="{= ${access>/GetCurrentUser/roles/Employee}}" />
+            <ObjectListItem title="Control Leave Requests" press="handleControlLeaveRequestsSelection" type="Active" visible="{= ${access>/GetCurrentUser/roles/Manager}}" />
+        </List>
     </Page>
 </mvc:View>

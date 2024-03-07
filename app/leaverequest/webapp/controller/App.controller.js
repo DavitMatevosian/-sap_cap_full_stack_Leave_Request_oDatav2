@@ -7,6 +7,7 @@ sap.ui.define(
   
       return BaseController.extend("com.app.leaverequest.controller.App", {
         onInit: function() {
+        
         }
       });
     }

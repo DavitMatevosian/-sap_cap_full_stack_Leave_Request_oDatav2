@@ -1,0 +1,48 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        id="EditDialog"
+        title="Edit Employee Details"
+        draggable="true"
+        resizable="true"
+        contentWidth="400px"
+        contentHeight="auto"
+        class="sapUiResponsiveContentPadding"
+    >
+    <content>
+        <Select
+            id="statusInput"
+            selectedKey="{status}"
+            width="100%"
+            tooltip="Select new status..."
+        >
+            <core:Item
+                key="Approved"
+                text="Approved"
+            />
+            <core:Item
+                key="Rejected"
+                text="Rejected"
+            />
+        </Select>
+        <Input
+            id="commentsInput"
+            value="{comments}"
+            placeholder="Enter new comments..."
+            tooltip="Enter new comments..."
+        />
+    </content>
+            <Button
+                id="btnSave"
+                text="Save"
+                press="onSave"
+            />
+            <Button
+                id="btnCancel"
+                text="Cancel"
+                press="onCancel"
+            />
+    </Dialog>
+</core:FragmentDefinition>

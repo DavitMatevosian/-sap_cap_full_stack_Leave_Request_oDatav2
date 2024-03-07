@@ -1,6 +1,7 @@
-employee_ID,startDate,endDate,status,reason,comments
-1,2024-02-10,2024-02-12,Approved,Annual Leave,Enjoy your vacation!
-2,2024-03-01,2024-03-03,Pending,Sick Leave,Please provide a doctor's note.
-3,2024-01-05,2024-01-10,Declined,Vacation,Insufficient staffing during requested period.
-4,2024-02-20,2024-02-22,Approved,Family Leave,Congratulations on the new addition to your family!
-5,2024-03-15,2024-03-20,Pending,Personal Leave,Waiting for manager's approval.
+ID,startDate,endDate,status,reason,comments,leaveType,employee_ID
+1,2024-03-05,2024-03-07,Pending,Vacation,Need some time off,Vacation,1
+2,2024-03-10,2024-03-12,Approved,Sick Leave,Feeling unwell,Sick Leave,2
+3,2024-03-15,2024-03-16,Rejected,Personal Reason,Unavailable,Personal,3
+4,2024-03-20,2024-03-22,Pending,Vacation,Family trip,Vacation,1
+5,2024-03-25,2024-03-26,Approved,Medical Appointment,Doctor's visit,Sick Leave,4
+6,2024-03-30,2024-03-31,Pending,Training,Attending workshop,Training,5

@@ -16,6 +16,24 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-leaverequest": "cds watch --open leaverequest/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-leaverequest": "cds watch --open leaverequest/webapp/index.html?sap-ui-xx-viewCache=false",
+    "start:hybrid": "cds bind --exec npm start --profile hybrid"
+  },
+  "cds":{
+    "requires": {
+      "auth": {
+        "Kind": "basic",
+        "users": {
+          "johndoe@example.com": {
+           "password": "initial",
+           "roles": ["Employee"]
+         },
+          "chriswilson@example.com": {
+           "password": "initial",
+           "roles": ["Manager"]
+         }
+        }
+      }
+    }
   }
 }
